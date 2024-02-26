@@ -22,7 +22,7 @@ public class OnlyBeanPostProcessor implements BeanPostProcessor {
                         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
                             // 执行切面逻辑
-                            System.out.println("执行切面逻辑");
+                            System.out.println("执行切面逻辑,method:"+ method.getName());
 
                             // 注意这里，真正执行目标方法的是普通bean，不是代理对象
                             return method.invoke(bean, args);

@@ -92,6 +92,17 @@ public class AnnotationConfigApplicationContext {
         return instance;
     }
 
+    /**
+     * configClass.isAnnotationPresent(ComponentScan.class)
+     * 这个方法用于检查类是否被指定类型的注解修饰
+     * 参数是Class对象，表示要检查的注解类型
+     * 如果该类上有被指定类型的注解，则返回true，否则返回false
+     *
+     * configClass.isAnnotation()
+     * 这个方法用于检查类是否有任何注解修饰
+     * 如果该类上有任何注解，则返回true，否则返回false
+     * 不需要指定具体的注解类型，只是检查是否有任何注解
+     */
     private void scan(Class configClass) {
         if (!configClass.isAnnotationPresent(ComponentScan.class)) {
             throw new NullPointerException("ComponentScan Annotation is not found");
